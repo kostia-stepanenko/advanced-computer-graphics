@@ -14,23 +14,25 @@ using namespace std;
 
 int main()
 {
-
-	cout << "running main" << endl;
-
-
 	// Initialise GLFW
 	if (!glfwInit())
 	{
-		fprintf(stderr, "Failed to initialize GLFW\n");
+		cerr << "Failed to initialize GLFW" << endl;
 		return -1;
+	}
+	else {
+		cout << "GLFW init completed" << endl;
 	}
 
 	// Open a window and create its OpenGL context
-	window = glfwCreateWindow(width, height, "Our first test :)", NULL, NULL);
+	window = glfwCreateWindow(width, height, "Our first test 123:)", NULL, NULL);
 	if (window == NULL) {
-		fprintf(stderr, "Failed to open GLFW window.");
+		cerr << "Failed to open GLFW window."<< endl;
 		glfwTerminate();
 		return -1;
+	}
+	else {
+		cout << "Main window successfully created" << endl;
 	}
 
 	glfwMakeContextCurrent(window);
@@ -61,17 +63,17 @@ int main()
 		// Swap buffers
 		glfwSwapBuffers(window);
 
-		//if (i > 1.0f)
-		//{
-		//	i = 0.0f;
-		//}
+		if (i > 1.0f)
+		{
+			i = 0.0f;
+		}
 
-		//if (j > 1.0f)
-		//{
-		//	j = 0.0f;
-		//}
+		if (j > 1.0f)
+		{
+			j = 0.0f;
+		}
 
-		//glClearColor(i += 0.1f, 0.0f, j += 0.05f , 0.0f);
+		glClearColor(i += 0.1f, 0.0f, j += 0.05f , 0.0f);
 
 
 		// Clear the screen
